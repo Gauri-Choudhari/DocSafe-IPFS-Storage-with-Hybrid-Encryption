@@ -1,0 +1,23 @@
+{
+  "name": "docsafe",
+  "version": "1.0.0",
+  "description": "IPFS Doc Storage System with Enhanced Security",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gauri-Choudhari/DocSafe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gauri-Choudhari/DocSafe/issues"
+  },
+  "homepage": "https://github.com/Gauri-Choudhari/DocSafe#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.17.2"
+  }
+}

@@ -1,0 +1,140 @@
+.hide
+{
+    display: none
+}
+
+
+
+.nav{
+    background-color: #0a216f;
+    display: flex;
+    width: 100%;
+    font: Montessarat;
+}
+
+.nav ul{
+    list-style-type: none;
+    color: white;
+    display: flex;
+    width: 70%;
+    height: 100%;
+   
+    
+}
+
+.navlogo{
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    padding-inline: 20px;
+    font-weight: 600;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.nav ul li{
+    font-weight: 500;
+    text-decoration: none;
+    padding: 1%;
+    color: white;
+    font-size: 20px;
+    padding-inline: 20px;
+}
+
+.nav ul li img{
+    height: 30px;
+
+    filter: invert();
+}
+
+.nav ul li:hover{
+    cursor: pointer;
+    height: 100%;
+    background-color: 
+    #173fae;
+}
+
+.metamasknav{
+    padding: 1%;
+    float: right;
+    width: 10%;
+    height: 100%;
+    
+}
+
+.metabutton{
+    font-size: 14px;
+    height: 45px;
+    background-color: #f7f7f7;
+    color:black;
+    border-radius: 100px;;
+
+    border: none;
+    padding-inline: 20px;
+    text-transform: uppercase;
+    margin: auto;
+    margin-top: 5%;
+    width: fit-content;
+    display: flex;;
+}
+
+.metabutton img{
+width: 25px;
+overflow: hidden;
+object-fit: cover;
+margin: auto;
+padding-left: 10px;
+}
+
+.metabutton:hover{
+    cursor: pointer;
+    background-color: #e7e7e7;
+}
+
+
+.Main{
+    overflow: hidden;
+    width: 100%;
+    
+    background: #f8f8f8;
+    min-height: 100vh;
+    
+}
+
+.normaltext{
+    font-family: "Montessarat", sans-serif;
+    font-size: 16px;
+    padding: 2%;
+}
+
+.container{
+    width: 80%;
+    margin: 5%;
+    margin-inline: 5%;
+    background: white;
+    padding: 5%;
+    filter: drop-shadow(2px 2px 4px #b7b7b7);
+    display: block;
+    justify-content: center;
+    
+}
+
+
+.Title{
+    color: #091476;
+    font: Montessarat;
+    text-align: center;
+}
+
+.fileinput{
+    
+    font-size: 14px;
+    margin: auto;
+    width: 90%;
+    padding: 2%;
+
+
+}
+
