@@ -5,12 +5,14 @@ import { Link, useLocation } from "react-router-dom";
 import "../styles/style.css";
 import metaimg from "../assets/images/MetaMask_Fox.svg.png";
 import fileimg from "../assets/images/file.png";
+import { UserContext } from '../contexts/UserContext';
 // import "../styles/common.css";
 
 
 function Navbar() {
 
   let location = useLocation();
+  const { userRole } = useContext(UserContext);
 
   return (
 
@@ -30,7 +32,24 @@ function Navbar() {
 
             <li className="navbar-item">
             <Link to="/fileupload" style={{ color: 'inherit', textDecoration: 'inherit'}}>
-              FileUpload</Link>
+              Upload</Link>
+            </li>
+
+            <li className="navbar-item">
+            <Link to="/myfiles" style={{ color: 'inherit', textDecoration: 'inherit'}}>
+              My Docs</Link>
+            </li>
+
+            <li className="navbar-item">
+            <Link to="/sharedfiles" style={{ color: 'inherit', textDecoration: 'inherit'}}>
+              Shared Docs</Link>
+            </li>
+
+            <li className="navbar-item">
+            <Link to={userRole=="Student"?"student/profile":
+            userRole=="Faculty"?"faculty/profile":
+            "roles"} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+              Profile</Link>
             </li>
 
             {/* <li className="navbar-item">
