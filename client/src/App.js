@@ -15,7 +15,6 @@ import MetaWallet from './components/MetaWallet';
 import UploadFile from './pages/UploadFile';
 import Home from './pages/Home';
 import MyFiles from './pages/MyFiles';
-import Profile from './pages/Profile';
 import UserProvider from './contexts/UserContext';
 import SelectRole from './pages/SelectRole';
 import StudentProfile from './pages/StudentProfile';
@@ -23,6 +22,7 @@ import FacultyProfile from './pages/FacultyProfile';
 import ViewFile from './pages/ViewFile';
 import ShareDoc from './pages/ShareDoc';
 import FilesSharedWithMe from './pages/FilesSharedWithMe';
+import GetKey from './pages/GetKey';
 //const provider = new ethers.providers.Web3Provider(window.ethereum);
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
       <Route exact path="/faculty/profile" element={<FacultyProfile/>}/>
       <Route exact path="/view/:ext/:hash/:key" element={<ViewFile/>}/>
       <Route exact path="/share/:hash/:key" element={<ShareDoc/>}/>
-      
+      <Route exact path="/getkey" element={<GetKey/>}/>
       <Route exact path="/myfiles" element={<MyFiles/>}/>
       <Route exact path="/sharedfiles" element={<FilesSharedWithMe/>}/>
       <Route exact path="/roles" element={<SelectRole/>}/>

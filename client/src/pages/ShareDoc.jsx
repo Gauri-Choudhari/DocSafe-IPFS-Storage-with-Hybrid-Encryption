@@ -7,6 +7,7 @@ import CryptoJS from "crypto-js";
 import Web3 from 'web3';
 import DocDep from '../contracts/DocDep.json';
 import contract from '../contracts/contract-address.json';
+import '../styles/profile.css';
 
 
 const web3 = new Web3(window.ethereum);
@@ -62,25 +63,32 @@ const ShareDoc = () => {
   };
 
   return (
-    <div>
-      <h2>Share Document</h2>
-      <label>
-        Recipient Public Key:
-        <input
-          type="text"
-          value={recipientPublicKey}
-          onChange={(e) => setRecipientPublicKey(e.target.value)}
-        />
-      </label>
-      <label>
+    <div className="profile-container">
+      <h2 className="profile-h2">Share Document</h2>
+      <div>
+   
+      <label className="profile-label-2">
         Recipient Address:
         <input
           type="text"
           value={recipientAddress}
           onChange={(e) => setRecipientAddress(e.target.value)}
+          required
+          className="profile-input-2"
         />
       </label>
-      <button onClick={shareDocument}>Share Document</button>
+      <br/>
+      <label className="profile-label-2">
+        Recipient Public Key:
+        <input
+          type="text"
+          value={recipientPublicKey}
+          onChange={(e) => setRecipientPublicKey(e.target.value)}
+          required
+          className="profile-input-2"
+        />
+      </label>
+      <button onClick={shareDocument} className="profile-button-2">Share Document</button>
       {isShared ? (
         <div>
           <p>Document shared successfully!</p>
@@ -89,6 +97,7 @@ const ShareDoc = () => {
       ) : (
         <p></p>
       )}
+    </div>
     </div>
   );
 };

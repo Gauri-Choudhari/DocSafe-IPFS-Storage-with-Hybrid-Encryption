@@ -5,6 +5,7 @@ import Web3 from 'web3';
 import DocDep from '../contracts/DocDep.json';
 import contract from '../contracts/contract-address.json';
 import { UserContext } from '../contexts/UserContext';
+import '../styles/docs.css';
 
 const web3 = new Web3(window.ethereum);
 const doccon = new web3.eth.Contract(DocDep.abi, contract.docdep);
@@ -29,25 +30,31 @@ const MyFiles = () => {
   }, []);
 
   return (
-    <div>
-      <h2>My Documents</h2>
-      <ul>
-        {ownedDocs
-          .filter(doc => doc.docHash && doc.docName) // Filter out entries with blank hash or name
-          .map((doc) => (
-            <li key={doc.docHash}>
-            
-             
-              <Link to={`/view/${(doc.docName || '').split('.').pop().toLowerCase()}/${doc.docHash}/${doc.encKey}`}>
-                {doc.docName}
+    <div className="documents-container">
+    <h2 className="documents-header">My Documents</h2>
+    <ul className="documents-list">
+      {ownedDocs
+        .filter(doc => doc.docHash && doc.docName) // Filter out entries with blank hash or name
+        .map((doc) => (
+          <li key={doc.docHash} className="document-item">
+            <Link
+              to={`/view/${(doc.docName || '').split('.').pop().toLowerCase()}/${doc.docHash}/${doc.encKey}`}
+              className="document-link"
+            >
+              {doc.docName}
+            </Link>
+            <button className="share-button">
+              <Link
+                to={`/share/${doc.docHash}/${doc.encKey}`}
+                className="share-link"
+              >
+                Share
               </Link>
-              <button>
-                <Link to={`/share/${doc.docHash}/${doc.encKey}`}>Share</Link>
-              </button>
-            </li>
-          ))}
-      </ul>
-    </div>
+            </button>
+          </li>
+        ))}
+    </ul>
+  </div>
   );
 };
 

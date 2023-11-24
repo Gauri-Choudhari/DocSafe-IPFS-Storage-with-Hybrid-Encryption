@@ -6,6 +6,7 @@ import Web3 from 'web3';
 import DocDep from '../contracts/DocDep.json';
 import contract from '../contracts/contract-address.json';
 import { UserContext } from '../contexts/UserContext';
+import '../styles/uploadstyle.css';
 
 //https://gateway.pinata.cloud/ipfs/QmedFxiupmnS8HJ6A6st8DEMp4sXR1jVxNS55NpDYqPqpj
 
@@ -130,49 +131,26 @@ const UploadFile = () => {
 
   
   return (
-    <div>
-      <h1>Upload a Document</h1>
-      <label>
-        Choose a File:
-        <input type="file" onChange={handleFileChange} />
-      </label>
-      <button onClick={handleEncrypt}>Encrypt and Upload File</button>
-      {/* <button onClick={handleDecrypt}>Decrypt File</button> */}
-
+    <div className="upload-container">
+      <h2 className='upload-h2'>Upload a Document</h2>
       <div>
-        <h2>Your Public Encryption Key</h2>
+        <h3>Your Public Encryption Key</h3>
         {publicKey && <p>{publicKey}</p>}
       </div>
+     
+      <label className='upload-label'>
+        Choose a File:
+        <input type="file" onChange={handleFileChange} required className='fileinput'/>
+      </label>
+      
+     
+      {/* <button onClick={handleDecrypt}>Decrypt File</button> */}
 
-      <iframe width="600" height={file?"400":"0"} src={fileurl}/>
-      {/* <div>
-        <h2>Encrypted Document Key</h2>
-        {encryptedDocKey && <p>{encryptedDocKey}</p>}
-      </div>
-      <div>
-        <h2>IPFS HASH</h2>
-        {IPFSHash && <p>{IPFSHash}</p>}
-      </div>
-      <div>
-        <h2>Encrypted File</h2>
-        {encryptedFile && <p>{encryptedFile}</p>}
-      </div>
-      <div>
-        <h2>Decrypted Document Key</h2>
-        {decryptedDocKey && <p>{decryptedDocKey}</p>}
-      </div>
+      
 
-      <div>
-  <h2>Decrypted File</h2>
-  {decryptedFile && (
-    <iframe
-      title="decryptedFile"
-      width="400"
-      height="400"
-      src= {decryptedFileurl}
-    />
-  )}
-</div> */}
+      <iframe height={file?"400":"0"} src={fileurl} className='filepreview'/>
+      <button onClick={handleEncrypt} className='uploadfilebutton'>Encrypt and Upload File</button>
+
     </div>
   );
 };

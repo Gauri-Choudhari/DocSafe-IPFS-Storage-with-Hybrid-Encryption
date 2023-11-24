@@ -3,6 +3,8 @@ import Web3 from 'web3';
 import UserDep from '../contracts/UserDep.json';
 import contract from '../contracts/contract-address.json';
 import { UserContext } from '../contexts/UserContext';
+import { Link } from 'react-router-dom';
+import '../styles/profile.css';
 
 const web3 = new Web3(window.ethereum);
 const usercon = new web3.eth.Contract(UserDep.abi, contract.userdep);
@@ -104,81 +106,101 @@ const FacultyProfile = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <div className='profile-container'>
+      <h1 className='profile-h2'>Faculty Profile</h1>
+      <Link to='/getkey'> <button className='profile-button-2'>Get my Public Encryption Key</button></Link>
+    <form onSubmit={handleSubmit} className='profile-form'>
+    <label className='profile-label'>
         Faculty ID:
         <input
           type="number"
           name="facultyId"
           value={formData.facultyId}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Name:
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Email:
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Phone:
         <input
           type="tel"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Position:
         <input
           type="text"
           name="position"
           value={formData.position}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Department:
         <input
           type="text"
           name="department"
           value={formData.department}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Institute:
         <input
           type="text"
           name="institute"
           value={formData.institute}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         City:
         <input
           type="text"
           name="city"
           value={formData.city}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit" className='profile-button'>Submit</button>
     </form>
+    </div>
   );
 };
 

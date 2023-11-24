@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import CryptoJS from "crypto-js";
 import { UserContext } from '../contexts/UserContext';
+import '../styles/uploadstyle.css';
 
 const ViewFile = () => {
   const { ext, hash, key } = useParams();
@@ -46,16 +47,15 @@ const ViewFile = () => {
   }, [ext, hash, key, user]);
 
   return (
-    <div>
-      <h2>View Decrypted File</h2>
+    <div className="upload-container">
+      <h2 className="upload-h2">View Decrypted File</h2>
       <div>
     
         {decryptedFileurl && (
           <iframe
             title="decryptedFile"
-            width="400"
-            height="400"
             src={decryptedFileurl}
+            className="filepreview-2"
           />
         )}
       </div>

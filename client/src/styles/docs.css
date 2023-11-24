@@ -1,0 +1,46 @@
+
+
+.documents-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.documents-header {
+    color: #0a216f;
+}
+
+.documents-list {
+    list-style: none;
+    padding: 0;
+}
+
+.document-item {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.document-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.share-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.share-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.share-button:hover {
+    background-color: #2980b9;
+}

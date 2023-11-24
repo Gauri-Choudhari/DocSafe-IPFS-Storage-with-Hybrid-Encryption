@@ -1,13 +1,4 @@
-# Sample Hardhat Project
+DocSafe is a Decentralized Document Storage Platform developed using IPFS. 
+It uses Hybrid Encryption based on AES and Elliptic Curve to ensure document security and file integrity.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+Please use node module web3@4.2.0 for best performance

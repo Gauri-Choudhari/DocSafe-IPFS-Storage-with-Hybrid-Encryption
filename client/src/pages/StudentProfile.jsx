@@ -3,6 +3,8 @@ import Web3 from 'web3';
 import UserDep from '../contracts/UserDep.json';
 import contract from '../contracts/contract-address.json';
 import { UserContext } from '../contexts/UserContext';
+import '../styles/profile.css';
+import {Link } from 'react-router-dom';
 
 const web3 = new Web3(window.ethereum);
 const usercon = new web3.eth.Contract(UserDep.abi, contract.userdep);
@@ -92,6 +94,7 @@ const StudentProfile = () => {
             formData.yearofgrad
           ).send({from: user, value: 0, gas: 5000000});
         console.log(transaction);
+        alert('Student profile updated successfully!');
        } catch (error) {
           console.error('Error sending transaction:', error.message);
           // Handle the error, e.g., show an error message to the user
@@ -124,7 +127,7 @@ const StudentProfile = () => {
       }
 
       // You can add further logic, such as redirecting the user or showing a success message
-      alert('Student profile updated successfully!');
+     
     } catch (error) {
       console.error('Error updating student profile:', error.message);
       // Handle the error, e.g., show an error message to the user
@@ -132,81 +135,105 @@ const StudentProfile = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <div>
+    
+    <div className='profile-container'>
+      
+      <h1 className='profile-h2'>Student Profile</h1>
+     <Link to='/getkey'> <button className='profile-button-2'>Get my Public Encryption Key</button></Link>
+    <form onSubmit={handleSubmit} className='profile-form'>
+      <label className='profile-label'>
         Student ID:
         <input
           type="text"
           name="studentId"
           value={formData.studentId}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Name:
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label  className='profile-label'>
         Email:
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Phone:
         <input
           type="tel"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Date of Birth:
         <input
           type="date"
           name="dob"
           value={formData.dob}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Year of Graduation:
         <input
           type="text"
           name="yearofgrad"
           value={formData.yearofgrad}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         Institute:
         <input
           type="text"
           name="institute"
           value={formData.institute}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <label>
+      <label className='profile-label'>
         City:
         <input
           type="text"
           name="city"
           value={formData.city}
           onChange={handleChange}
+          className='profile-input'
+          required
         />
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit" className='profile-button'>Submit</button>
     </form>
+    </div>
+    </div>
   );
 };
 
